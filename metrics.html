@@ -584,17 +584,17 @@ parse the backend metrics from the yaml file.</p>
 <h3><span class="section-number">9.6.2. </span>User Manual - starting TorchServe with a yaml file specified<a class="headerlink" href="#user-manual-starting-torchserve-with-a-yaml-file-specified" title="Permalink to this headline">¶</a></h3>
 <ol>
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">metrics.yaml</span></code> file to parse metrics from OR utilize default <a class="reference external" href="https://github.com/pytorch/serve/blob/master/frontend/server/src/test/resources/metrics_default.yaml">metrics_default.yaml</a></p></li>
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">metrics_log</span></code> argument equal to the yaml file path in the <code class="docutils literal notranslate"><span class="pre">config.properties</span></code> being used:</p>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">metrics_config</span></code> argument equal to the yaml file path in the <code class="docutils literal notranslate"><span class="pre">config.properties</span></code> being used:</p>
 <div class="highlight-properties notranslate"><div class="highlight"><pre><span></span>...
 ...
 # enable_metrics_api=false
 workflow_store=../archive/src/test/resources/workflows
-metrics_log=../../../ts/tests/unit_tests/metrics_yaml_testing/metrics.yaml
+metrics_config=../../../ts/tests/unit_tests/metrics_yaml_testing/metrics.yaml
 ...
 ...
 </pre></div>
 </div>
-<p>If a <code class="docutils literal notranslate"><span class="pre">metrics_log</span></code> argument is not specified, the default yaml file will be used.</p>
+<p>If a <code class="docutils literal notranslate"><span class="pre">metrics_config</span></code> argument is not specified, the default yaml file will be used.</p>
 </li>
 <li><p>Run torchserve and specify the path of the <code class="docutils literal notranslate"><span class="pre">config.properties</span></code> after the <code class="docutils literal notranslate"><span class="pre">ts-config</span></code> flag:
 (example using <a class="reference external" href="https://github.com/pytorch/serve/tree/master/examples/Huggingface_Transformers">Huggingface_Transformers</a>)</p>
