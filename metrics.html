@@ -528,7 +528,8 @@ Users will be restricted to the existing metric types when adding metrics via Me
 </section>
 <section id="central-metrics-yaml-file-definition">
 <h2><span class="section-number">9.6. </span>Central metrics YAML file definition<a class="headerlink" href="#central-metrics-yaml-file-definition" title="Permalink to this headline">¶</a></h2>
-<p>TorchServe defines metrics in a <code class="docutils literal notranslate"><span class="pre">metrics.yaml</span></code> file, including both frontend metrics (i.e. <code class="docutils literal notranslate"><span class="pre">ts_metrics</span></code>) and backend metrics (i.e. <code class="docutils literal notranslate"><span class="pre">model_metrics</span></code>).
+<p>TorchServe defines metrics in a <a class="reference external" href="https://github.com/pytorch/serve/blob/master/frontend/server/src/test/resources/metrics_default.yaml">metrics_default.yaml</a>
+file, including both frontend metrics (i.e. <code class="docutils literal notranslate"><span class="pre">ts_metrics</span></code>) and backend metrics (i.e. <code class="docutils literal notranslate"><span class="pre">model_metrics</span></code>).
 When TorchServe is started, the metrics definition is loaded in the frontend and backend cache separately.
 The backend flushes the metrics cache once a load model or inference request is completed.</p>
 <p>Dynamic updates between the frontend and backend are <em>not</em> currently being handled.</p>
@@ -570,6 +571,8 @@ The backend flushes the metrics cache once a load model or inference request is 
 <span class="w">        </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ModelName</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Level</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
+<p>These are the default metrics within the yaml file, but the user can either delete them to their liking / ignore them altogether, because these metrics will not be emitted
+unless they are edited.</p>
 <section id="how-it-works">
 <h3><span class="section-number">9.6.1. </span>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h3>
 <p>Whenever torchserve starts, the <a class="reference external" href="https://github.com/pytorch/serve/blob/master/ts/model_loader.py">model_loader</a> initializes
